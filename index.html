@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+  Name: Jalen Higgins
+  Date: 09.30.2025
+  CSC 372-01
+
+  Assignment 5 – Rock, Paper, Scissors
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock • Paper • Scissors</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <h1>Rock • Paper • Scissors</h1>
+    <p id="tagline">Click a move, watch the computer “think,” and see who wins.</p>
+  </header>
+
+  <main>
+    <!-- Section 1: Player throw -->
+    <section id="player" aria-labelledby="player-heading">
+      <h2 id="player-heading">Your Move</h2>
+      <p id="hint">Choose one:</p>
+
+      <div id="choices" role="group" aria-label="Player choices">
+        <figure class="choice" data-move="rock" tabindex="0" aria-label="Rock">
+          <img src="img/rock.png" alt="Rock">
+          <figcaption>Rock</figcaption>
+        </figure>
+
+        <figure class="choice" data-move="paper" tabindex="0" aria-label="Paper">
+          <img src="img/paper.png" alt="Paper">
+          <figcaption>Paper</figcaption>
+        </figure>
+
+        <figure class="choice" data-move="scissors" tabindex="0" aria-label="Scissors">
+          <img src="img/scissors.png" alt="Scissors">
+          <figcaption>Scissors</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 2: Computer throw -->
+    <section id="computer" aria-labelledby="computer-heading">
+      <h2 id="computer-heading">Computer</h2>
+
+      <figure id="computer-figure">
+        <img id="computer-img" src="img/question-mark.png" alt="Computer is thinking">
+        <figcaption id="computer-caption" aria-live="polite">Thinking…</figcaption>
+      </figure>
+      <p id="thinking-note" aria-live="polite">Ready.</p>
+    </section>
+
+    <!-- Section 3: Outcome -->
+    <section id="outcome" aria-labelledby="outcome-heading">
+      <h2 id="outcome-heading">Outcome</h2>
+      <p id="result" aria-live="polite">Make a selection to begin.</p>
+    </section>
+
+    <!-- Section 4: Scoreboard -->
+    <section id="scoreboard" aria-labelledby="scoreboard-heading">
+      <h2 id="scoreboard-heading">Scoreboard (this session)</h2>
+      <div id="score-grid" role="group" aria-label="Scoreboard">
+        <div class="score">
+          <span class="label">Wins</span>
+          <span id="wins" class="value">0</span>
+        </div>
+        <div class="score">
+          <span class="label">Losses</span>
+          <span id="losses" class="value">0</span>
+        </div>
+        <div class="score">
+          <span class="label">Ties</span>
+          <span id="ties" class="value">0</span>
+        </div>
+      </div>
+
+      <button id="reset-btn" type="button">Reset</button>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>© 2025 Jalen Higgins</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
