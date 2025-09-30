@@ -1,0 +1,118 @@
+/*
+  Name: Jalen Higgins
+  Date: 09.30.2025
+  CSC 372-01
+  Styles for Assignment 5 – Rock, Paper, Scissors
+*/
+
+:root {
+  --bg: #0f1115;
+  --panel: #131722;
+  --ink: #e6ebf2;
+  --muted: #a6b0c3;
+  --accent: #7aa2f7;
+  --accent-2: #9ece6a;
+  --danger: #f7768e;
+  --shadow: rgba(0,0,0,0.45);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--ink);
+  background: linear-gradient(180deg, #0b0d12, var(--bg));
+}
+
+h1 { margin: 0.25rem 0 0.5rem; font-size: 2rem; }
+h2 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+
+/* contextual / shared */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+section {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px var(--shadow);
+  padding: 1rem;
+}
+
+/* shared classes used multiple times */
+.choice {
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  text-align: center;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  background: #0f1422;
+}
+.choice:hover, .choice:focus { transform: translateY(-2px); border-color: #334; }
+.choice.selected { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(122,162,247,0.2); }
+.choice img { width: 92px; height: 92px; object-fit: contain; }
+.choice figcaption { color: var(--muted); margin-top: 0.25rem; font-size: 0.9rem; }
+
+.score {
+  background: #0f1422;
+  border: 1px solid #273043;
+  border-radius: 12px;
+  padding: 0.75rem;
+  text-align: center;
+}
+.score .label { display: block; color: var(--muted); font-size: 0.85rem; }
+.score .value { font-size: 1.5rem; font-weight: 700; }
+
+/* IDs (unique elements) */
+#site-header, #site-footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+}
+#tagline { color: var(--muted); margin: 0; }
+#hint { color: var(--muted); margin-top: 0; }
+
+#choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+#computer-figure { margin: 0; text-align: center; }
+#computer-img { width: 120px; height: 120px; object-fit: contain; }
+#computer-caption { color: var(--muted); }
+#result { font-size: 1.1rem; }
+
+#score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+#reset-btn {
+  margin-top: 0.75rem;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  background: var(--accent-2);
+  color: #091014;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+#reset-btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+#reset-btn:active { transform: translateY(0); }
+
+#site-footer p { color: var(--muted); }
